@@ -4,6 +4,7 @@ import 'package:web3_pal/cores/constants/constants.dart';
 import 'package:web3_pal/cores/navigator/navigator.dart';
 import 'package:web3_pal/cores/utils/utils.dart';
 import 'package:web3_pal/features/auth/views/create_account_view.dart';
+import 'package:web3_pal/features/home/view/home_view.dart';
 
 class LoginView extends StatelessWidget {
   static const String routeName = '/login';
@@ -34,7 +35,10 @@ class LoginView extends StatelessWidget {
           isPassword: true,
         ),
         verticalSpace(30),
-        Button(text: "Log In", onTap: () {}),
+        Button(
+          text: "Log In",
+          onTap: () => AppRouter.instance.navigateTo(HomeScreen.routeName),
+        ),
         verticalSpace(10),
         Center(
           child: GestureDetector(
