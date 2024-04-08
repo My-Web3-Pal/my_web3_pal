@@ -10,8 +10,6 @@ import '../cores/shared_features/image_upload/image_upload_locator.dart';
 import '../cores/shared_features/loading_overlay/bloc/loading_over_lay_bloc.dart';
 import '../cores/shared_session/authentication_local_storage_data_source.dart';
 import '../cores/utils/utils.dart';
-import '../features/Authentication/auth_locator.dart';
-import '../features/laundry/laundry_locator.dart';
 import 'env.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -31,12 +29,10 @@ class Locator {
     setUpImageUploadLocator();
 
     /// -------- Authentication -------- ///
-    setUpAuthenticationLocators();
+    // setUpAuthenticationLocators();
 
     /// ------------- Misc -------------//
     setUpBankMiscLocator();
-
-    setUpLaundryLocator();
   }
 
   static void _otherSetup() {

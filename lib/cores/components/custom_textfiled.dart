@@ -105,7 +105,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                         ? kcGrey100.withOpacity(0.2)
                         : const Color(0xFFA0AFB4),
                   ),
-                  borderRadius: BorderRadius.circular(sr(8)),
+                  borderRadius: BorderRadius.circular(sr(10)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -113,11 +113,11 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                         ? kcGrey100.withOpacity(0.7)
                         : const Color(0xFFA0AFB4),
                   ),
-                  borderRadius: BorderRadius.circular(sr(8)),
+                  borderRadius: BorderRadius.circular(sr(10)),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: kcErrorColor),
-                  borderRadius: BorderRadius.circular(sr(8)),
+                  borderRadius: BorderRadius.circular(sr(10)),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -125,7 +125,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                         ? kcGrey100.withOpacity(0.2)
                         : const Color(0xFFA0AFB4),
                   ),
-                  borderRadius: BorderRadius.circular(sr(8)),
+                  borderRadius: BorderRadius.circular(sr(10)),
                 ),
                 disabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -133,7 +133,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                         ? kcGrey100.withOpacity(0.2)
                         : const Color(0xFFA0AFB4),
                   ),
-                  borderRadius: BorderRadius.circular(sr(8)),
+                  borderRadius: BorderRadius.circular(sr(10)),
                 ),
                 hintText: widget.hintText,
                 hintStyle: GoogleFonts.inter(

@@ -149,7 +149,7 @@ class Button extends StatelessWidget {
     } else {
       shape = MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(sp(5.0)),
+          borderRadius: BorderRadius.circular(sp(10.0)),
           side: BorderSide(color: borderColor ?? Colors.transparent),
         ),
       );
