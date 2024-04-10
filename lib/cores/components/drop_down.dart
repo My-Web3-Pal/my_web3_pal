@@ -47,7 +47,7 @@ class DropDownWidget<T> extends StatelessWidget {
             isDense: true,
             borderRadius: BorderRadius.circular(sr(8.0)),
             value: value,
-            icon: const Icon(Icons.keyboard_arrow_down),
+            icon: const Icon(Icons.keyboard_arrow_down, color: kcWhite),
             style: GoogleFonts.inter(
               color: Theme.of(context).textTheme.titleMedium!.color,
               fontWeight: FontWeight.w600,
@@ -112,7 +112,7 @@ class DropDownWidget<T> extends StatelessWidget {
                     .textTheme
                     .titleMedium!
                     .color!
-                    .withOpacity(0.5),
+                    .withOpacity(0.8),
                 fontWeight: FontWeight.w300,
                 fontSize: sp(13),
               ),

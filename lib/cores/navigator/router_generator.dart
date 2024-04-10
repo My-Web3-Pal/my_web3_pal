@@ -7,6 +7,9 @@ import 'package:web3_pal/features/home/view/air_drops_view.dart';
 import 'package:web3_pal/features/home/view/home_view.dart';
 
 import '../../features/auth/views/create_account_view.dart';
+import '../../features/home/view/my_alpha_view.dart';
+import '../../features/home/view/nft_view.dart';
+import '../../features/home/view/resources_screen.dart';
 import 'error_route_screen.dart';
 
 class RouteGenerator {
@@ -25,6 +28,15 @@ class RouteGenerator {
 
       case AirDropView.routeName:
         return pageRoute(const AirDropView());
+
+      case ResourcesScreen.routeName:
+        return pageRoute(const ResourcesScreen());
+
+      case MyAlphaView.routeName:
+        return pageRoute(const MyAlphaView());
+
+      case NftPageView.routeName:
+        return pageRoute(const NftPageView());
 
       default:
         return errorRoute();
