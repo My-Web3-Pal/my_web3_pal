@@ -21,7 +21,10 @@ class LoginView extends StatelessWidget {
           child: SizedBox(
             width: w(65),
             height: h(65),
-            child: const Placeholder(color: kcWhite),
+            child: const ImageWidget(
+              imageUrl: "assets/images/app_icon.png",
+              imageTypes: ImageTypes.asset,
+            ),
           ),
         ),
         verticalSpace(60),

@@ -73,19 +73,32 @@ class CustomAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      const Icon(FontAwesomeIcons.chevronLeft, color: kcWhite),
+      GestureDetector(
+        onTap: Navigator.of(context).pop,
+        child: const Icon(FontAwesomeIcons.chevronLeft, color: kcWhite),
+      ),
       horizontalSpace(50),
       const Spacer(),
       SizedBox(
         width: w(40),
         height: h(40),
-        child: const Placeholder(color: kcWhite),
+        child: const ImageWidget(
+          imageUrl: "assets/images/app_icon.png",
+          imageTypes: ImageTypes.asset,
+        ),
       ),
       const Spacer(),
       Row(children: [
         const Icon(CupertinoIcons.bell, color: kcWhite),
         horizontalSpace(10),
-        CircleAvatar(radius: 20, backgroundColor: Colors.grey.withOpacity(0.8)),
+        CircleAvatar(
+          radius: 20,
+          backgroundColor: Colors.grey.withOpacity(0.8),
+          child: const ImageWidget(
+            imageTypes: ImageTypes.asset,
+            imageUrl: "assets/images/profile.png",
+          ),
+        ),
       ]),
     ]);
   }

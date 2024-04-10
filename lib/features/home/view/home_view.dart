@@ -6,6 +6,9 @@ import 'package:web3_pal/features/home/view/air_drops_view.dart';
 
 import '../../../cores/navigator/app_router.dart';
 import '../../../cores/utils/utils.dart';
+import 'my_alpha_view.dart';
+import 'nft_view.dart';
+import 'resources_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
@@ -47,6 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Color.fromRGBO(217, 217, 217, 1),
                 borderRadius: BorderRadius.all(Radius.elliptical(40, 40)),
               ),
+              child: const ImageWidget(
+                imageTypes: ImageTypes.asset,
+                imageUrl: 'assets/images/profile.png',
+              ),
             ),
           ],
         ),
@@ -72,79 +79,104 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  menuItem('My Alphas'),
-                  verticalSpace(30.0),
-                ],
-              ),
-            ),
-            Container(
-              width: 180.0,
-              color: Colors.white10,
-              child: ExpansionTile(
-                title: Text(
-                  'NFTs',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: Color.fromRGBO(255, 255, 255, 1),
-                      // color: Colors.red,
-                      fontFamily: 'Inter',
-                      fontSize: 16,
-                      letterSpacing:
-                          0 /*percentages not used in flutter. defaulting to zero*/,
-                      fontWeight: FontWeight.normal,
-                      height: 1),
-                ),
-                trailing: Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Color.fromRGBO(255, 255, 255, 1),
-                  size: 33.0,
-                ),
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          menuItem('WATCHLIST'),
-                          SizedBox(
-                            height: 30.0,
-                          ),
-                          menuItem('CART'),
-                          SizedBox(
-                            height: 30.0,
-                          ),
-                          menuItem('SCORED'),
-                          SizedBox(
-                            height: 30.0,
-                          ),
-                          menuItem('HODDY'),
-                          SizedBox(
-                            height: 30.0,
-                          ),
-                        ],
-                      ),
+                  verticalSpace(30),
+                  menuItem(
+                    'My Alphas',
+                    onTap: () => AppRouter.instance.navigateTo(
+                      MyAlphaView.routeName,
                     ),
                   ),
+                  verticalSpace(30.0),
+                  menuItem(
+                    'NFTs',
+                    onTap: () => AppRouter.instance.navigateTo(
+                      NftPageView.routeName,
+                    ),
+                  ),
+                  verticalSpace(30),
                 ],
               ),
             ),
-            SizedBox(
-              height: 20.0,
-            ),
+            // Container(
+            //   width: 180.0,
+            //   // color: Colors.white10,
+            //   child: GestureDetector(
+            //     onTap: () => AppRouter.instance.navigateTo(
+            //       NftPageView.routeName,
+            //     ),
+            //     child: const Text(
+            //       'NFTs',
+            //       textAlign: TextAlign.left,
+            //       style: TextStyle(
+            //         color: Color.fromRGBO(255, 255, 255, 1),
+            //         // color: Colors.red,
+            //         fontFamily: 'Inter',
+            //         fontSize: 16,
+            //         letterSpacing:
+            //             0 /*percentages not used in flutter. defaulting to zero*/,
+            //         fontWeight: FontWeight.normal,
+            //         height: 1,
+            //       ),
+            //     ),
+            //     // trailing: Icon(
+            //     //   Icons.keyboard_arrow_down,
+            //     //   color: Color.fromRGBO(255, 255, 255, 1),
+            //     //   size: 33.0,
+            //     // ),
+            //     // children: <Widget>[
+            //     //   Padding(
+            //     //     padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            //     //     child: Align(
+            //     //       alignment: Alignment.topLeft,
+            //     //       child: Column(
+            //     //         mainAxisAlignment: MainAxisAlignment.start,
+            //     //         crossAxisAlignment: CrossAxisAlignment.start,
+            //     //         mainAxisSize: MainAxisSize.min,
+            //     //         children: <Widget>[
+            //     //           SizedBox(
+            //     //             height: 10.0,
+            //     //           ),
+            //     //           menuItem('WATCHLIST'),
+            //     //           SizedBox(
+            //     //             height: 30.0,
+            //     //           ),
+            //     //           menuItem('CART'),
+            //     //           SizedBox(
+            //     //             height: 30.0,
+            //     //           ),
+            //     //           menuItem('SCORED'),
+            //     //           SizedBox(
+            //     //             height: 30.0,
+            //     //           ),
+            //     //           menuItem('HODDY'),
+            //     //           SizedBox(
+            //     //             height: 30.0,
+            //     //           ),
+            //     //         ],
+            //     //       ),
+            //     //     ),
+            //     //   ),
+            //     // ],
+            //   ),
+            // ),
+            // SizedBox(height: 20.0),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  menuItem('DEFI'),
+                  menuItem(
+                    'DEFI',
+                    // onTap: () => AppRouter.instance.navigateTo( "",),
+                  ),
+                  SizedBox(height: 30.0),
+                  menuItem(
+                    'Resources',
+                    onTap: () => AppRouter.instance.navigateTo(
+                      ResourcesScreen.routeName,
+                    ),
+                  ),
                   SizedBox(height: 30.0),
                   menuItem(
                     'AIRDROPS',
@@ -235,11 +267,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       color: Color.fromRGBO(56, 80, 238, 1),
                     ),
-                    child: SvgPicture.asset('images/filter_2.svg',
-                        // semanticsLabel: 'filter2',
-                        height: 8,
-                        width: 8,
-                        fit: BoxFit.scaleDown),
+                    child: SvgPicture.asset(
+                      'images/filter_2.svg',
+                      height: 8,
+                      width: 8,
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
                   // 03266691636
                 ],
@@ -251,8 +284,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: height / 4.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('images/Rectangle144.png'),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/home_large_image.png'),
                       fit: BoxFit.fitWidth,
                     ),
                   ),
@@ -349,24 +382,36 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Row(
                       children: [
-                        _projectCard(context, 'images/Rectangle133.png',
-                            'Mints of the day'),
+                        _projectCard(
+                          context,
+                          'assets/images/home_medium_image.png',
+                          'Mints of the day',
+                        ),
                         SizedBox(
                           width: width / 19.4,
                         ),
-                        _projectCard(context, 'images/Rectangle135.png',
-                            'Gary gee organizes NFT event'),
+                        _projectCard(
+                          context,
+                          'assets/images/home_medium_image.png',
+                          'Gary gee organizes NFT event',
+                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        _projectCard(context, 'images/Rectangle134.png',
-                            'DeGods NFT have secured a partnership'),
+                        _projectCard(
+                          context,
+                          'assets/images/home_medium_image.png',
+                          'DeGods NFT have secured a partnership',
+                        ),
                         SizedBox(
                           width: width / 19.4,
                         ),
-                        _projectCard(context, 'images/Rectangle137.png',
-                            'DeGods NFT have secured a partnership'),
+                        _projectCard(
+                          context,
+                          'assets/images/home_medium_image.png',
+                          'DeGods NFT have secured a partnership',
+                        ),
                       ],
                     ),
                   ],
