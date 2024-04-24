@@ -87,79 +87,84 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   verticalSpace(30.0),
-                  menuItem(
-                    'NFTs',
-                    onTap: () => AppRouter.instance.navigateTo(
-                      NftPageView.routeName,
-                    ),
-                  ),
-                  verticalSpace(30),
+                  // menuItem(
+                  //   'NFTs',
+                  //   onTap: () => AppRouter.instance.navigateTo(
+                  //     NftPageView.routeName,
+                  //   ),
+                  // ),
+                  // verticalSpace(30),
                 ],
               ),
             ),
-            // Container(
-            //   width: 180.0,
-            //   // color: Colors.white10,
-            //   child: GestureDetector(
-            //     onTap: () => AppRouter.instance.navigateTo(
-            //       NftPageView.routeName,
-            //     ),
-            //     child: const Text(
-            //       'NFTs',
-            //       textAlign: TextAlign.left,
-            //       style: TextStyle(
-            //         color: Color.fromRGBO(255, 255, 255, 1),
-            //         // color: Colors.red,
-            //         fontFamily: 'Inter',
-            //         fontSize: 16,
-            //         letterSpacing:
-            //             0 /*percentages not used in flutter. defaulting to zero*/,
-            //         fontWeight: FontWeight.normal,
-            //         height: 1,
-            //       ),
-            //     ),
-            //     // trailing: Icon(
-            //     //   Icons.keyboard_arrow_down,
-            //     //   color: Color.fromRGBO(255, 255, 255, 1),
-            //     //   size: 33.0,
-            //     // ),
-            //     // children: <Widget>[
-            //     //   Padding(
-            //     //     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            //     //     child: Align(
-            //     //       alignment: Alignment.topLeft,
-            //     //       child: Column(
-            //     //         mainAxisAlignment: MainAxisAlignment.start,
-            //     //         crossAxisAlignment: CrossAxisAlignment.start,
-            //     //         mainAxisSize: MainAxisSize.min,
-            //     //         children: <Widget>[
-            //     //           SizedBox(
-            //     //             height: 10.0,
-            //     //           ),
-            //     //           menuItem('WATCHLIST'),
-            //     //           SizedBox(
-            //     //             height: 30.0,
-            //     //           ),
-            //     //           menuItem('CART'),
-            //     //           SizedBox(
-            //     //             height: 30.0,
-            //     //           ),
-            //     //           menuItem('SCORED'),
-            //     //           SizedBox(
-            //     //             height: 30.0,
-            //     //           ),
-            //     //           menuItem('HODDY'),
-            //     //           SizedBox(
-            //     //             height: 30.0,
-            //     //           ),
-            //     //         ],
-            //     //       ),
-            //     //     ),
-            //     //   ),
-            //     // ],
-            //   ),
-            // ),
-            // SizedBox(height: 20.0),
+            Container(
+              width: 180.0,
+              // color: Colors.white10,
+              child: Theme(
+                data: Theme.of(context).copyWith(
+                  dividerColor: Colors.transparent,
+                ),
+                child: ExpansionTile(
+                  title: const Text(
+                    'NFTs',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      // color: Colors.red,
+                      fontFamily: 'Inter',
+                      fontSize: 16,
+                      letterSpacing:
+                          0 /*percentages not used in flutter. defaulting to zero*/,
+                      fontWeight: FontWeight.normal,
+                      height: 1,
+                    ),
+                  ),
+                  trailing: const Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Color.fromRGBO(255, 255, 255, 1),
+                    size: 33.0,
+                  ),
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            SizedBox(height: 10.0),
+                            menuItem(
+                              'WATCHLIST',
+                              onTap: () => AppRouter.instance.navigateTo(
+                                NftPageView.routeName,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30.0,
+                            ),
+                            menuItem('CART'),
+                            SizedBox(
+                              height: 30.0,
+                            ),
+                            menuItem('SCORED'),
+                            SizedBox(
+                              height: 30.0,
+                            ),
+                            menuItem('HODDY'),
+                            SizedBox(
+                              height: 30.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 20.0),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Column(
@@ -323,14 +328,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       'News',
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontFamily: 'Inter',
-                          fontSize: 20,
-                          letterSpacing:
-                              0 /*percentages not used in flutter. defaulting to zero*/,
-                          fontWeight: FontWeight.normal,
-                          height: 1.5 /*PERCENT not supported*/
-                          ),
+                        color: Color.fromRGBO(255, 255, 255, 1),
+                        fontFamily: 'Inter',
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                        height: 1.5,
+                      ),
                     ),
                     Container(
                       width: width / 2.6,
