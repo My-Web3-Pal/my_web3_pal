@@ -2,7 +2,7 @@ import '../../app/env.dart';
 import '../../app/locator.dart';
 
 class ApiEndpoints {
-  static const String _versionOne = '/api';
+  static const String _versionOne = '/v1';
 
   // static const _isDebug = kDebugMode;
 
@@ -19,5 +19,5 @@ class ApiEndpoints {
   /// Auth
   static final String login = '$_baseUrlV1/auth/login';
   static final String logout = '$_baseUrlV1/auth/logout';
-  static final String signUp = '$_baseUrlV1/auth/signup';
+  static final String signUp = '$_baseUrlV1/auth/register';
 }

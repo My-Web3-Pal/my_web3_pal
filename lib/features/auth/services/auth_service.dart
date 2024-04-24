@@ -21,7 +21,7 @@ class AuthService {
   ) async {
     final response = await httpHelper.post(
       url: ApiEndpoints.signUp,
-      body: {"email": email, "password": password, "username": username},
+      body: {"email": email, "password": password, "name": username},
     );
 
     return response;
