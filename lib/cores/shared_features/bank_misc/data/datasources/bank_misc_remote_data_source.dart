@@ -17,8 +17,7 @@ class BankMiscRemoteDataSourceImpl implements BankMiscRemoteDataSource {
 
   @override
   Future<GetNigeriaBankModel> getNigerianBanks() async {
-    final Map<String, dynamic> response =
-        await httpHelper.get(ApiEndpoints.getNigeriaBanks);
+    final Map<String, dynamic> response = await httpHelper.get("");
 
     return GetNigeriaBankModel.fromMap(response);
   }
@@ -27,8 +26,8 @@ class BankMiscRemoteDataSourceImpl implements BankMiscRemoteDataSource {
   Future<ResolveBankModel> resolveBankAccount(
     RequestParam requestParam,
   ) async {
-    final Map<String, dynamic> response = await httpHelper
-        .get(ApiEndpoints.resolveBank, query: requestParam.toMap());
+    final Map<String, dynamic> response =
+        await httpHelper.get(ApiEndpoints.login, query: requestParam.toMap());
 
     return ResolveBankModel.fromMap(response);
   }

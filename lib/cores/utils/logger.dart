@@ -10,7 +10,12 @@ class LoggerHelper {
       return;
     }
 
-    developer.log(e.toString());
-    developer.log(s.toString());
+    // developer.log(e.toString());
+    // developer.log(s.toString());
+
+    if (kDebugMode) {
+      print(e);
+      print(s);
+    }
   }
 }
