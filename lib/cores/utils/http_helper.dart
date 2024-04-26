@@ -291,6 +291,6 @@ class HttpHelper {
       return errorMap.values.join('\n');
     }
 
-    return 'Something went wrong, Please try again';
+    return data['message'] ?? 'Something went wrong, Please try again';
   }
 }

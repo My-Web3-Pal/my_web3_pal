@@ -49,7 +49,7 @@ class _CreateAccountViewState extends State<CreateAccountView> {
         bloc: signupBloc,
         listener: (context, SignUpState state) {
           if (state is SignUpSuccess) {
-            AppRouter.instance.navigateTo(HomeScreen.routeName);
+            AppRouter.instance.clearRouteAndPush(HomeScreen.routeName);
           } else if (state is SignUpError) {
             SnackBarService.showErrorSnackBar(
               context: context,

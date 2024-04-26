@@ -46,7 +46,7 @@ class _LoginViewState extends State<LoginView> {
         bloc: loginBloc,
         listener: (context, LoginState state) {
           if (state is LoginSuccess) {
-            AppRouter.instance.navigateTo(HomeScreen.routeName);
+            AppRouter.instance.clearRouteAndPush(HomeScreen.routeName);
           } else if (state is LoginError) {
             SnackBarService.showErrorSnackBar(
               context: context,
